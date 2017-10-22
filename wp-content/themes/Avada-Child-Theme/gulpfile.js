@@ -29,8 +29,8 @@
 
 // START Editing Project Variables.
 // Project related.
-var project                 = 'Pyromancy Avada'; // Project Name.
-var projectURL              = 'pyr.dev:8888/wordpress'; // Local project URL of your already running WordPress site. Could be something like local.dev or localhost:8888.
+var project                 = 'Pyromancy 2018 Avada'; // Project Name.
+var projectURL              = 'pyromancy2018:8888/wp'; // Local project URL of your already running WordPress site. Could be something like local.dev or localhost:8888.
 var productURL              = './'; // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 
 // Translation related.
@@ -137,7 +137,7 @@ gulp.task( 'browser-sync', function() {
     // @link http://www.browsersync.io/docs/options/
 
     // Project URL.
-    proxy: 'http://pyr.dev:8888/wordpress',
+    proxy: 'http://pyromancy2018.dev:8888/wp',
 
     // `true` Automatically open the browser with BrowserSync live server.
     // `false` Stop the browser from automatically opening.
