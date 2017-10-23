@@ -145,7 +145,7 @@ gulp.task( 'browser-sync', function() {
 
     // Inject CSS changes.
     // Commnet it to reload browser for every CSS change.
-    injectChanges: false,
+    injectChanges: true,
 
     // Use a specific port (instead of the one auto-detected by Browsersync).
     //port: 7000,
