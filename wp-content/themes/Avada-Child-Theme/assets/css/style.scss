@@ -7,4 +7,152 @@ Template: Avada
 Version: 1.0.0
 Text Domain:  Avada
 */
+@import 'node_modules/modularscale-sass/stylesheets/modularscale';
+@import 'node_modules/breakpoint-sass/stylesheets/_breakpoint'; // or 'breakpoint-sass' when using npm
+@import 'node_modules/breakpoint-slicer/stylesheets/breakpoint-slicer';
+//@import 'helpers/helpers';
+
+
+$dark-gray: #585858;
+$tana: #bdba9c;
+$khaki: #f0e68c;
+$west-coast: #64551f;
+$highball: #90813b;
+$sandstone: #7b6d5c;
+$schooner: #8b8378;
+$spice: #66543e;
+$madras: #4c3b25;
+$onion: #33250d;
+$woodrush: #332915;
+$jacko-bean: #2e1c08;
+$acadia: #1e1205;
+$crowshead: #1a130a;
+
+$modularscale: (
+        base: .85em,
+        ratio: 1.2,
+        400px: (
+                base:1em,
+        ),
+        900px: (
+                base: 1.875em,
+        ),
+);
+
+$type-style: (
+        default : (
+                font-family: 'PostGrotesk-Book',
+                text-transform: none,
+                text-decoration:none,
+                font-weight: normal,
+                letter-spacing: 0px,
+                line-height: 1.5,
+                leading: 1.5,
+            //TODO: change to direct font size option
+                font-size: 0,
+                children: (
+                        p : 0,
+                        h1:6,
+                        h2:5,
+                ),
+                scale : false,
+        ),
+        base : (
+                font-family: ambroisestdfrancois-demi,
+                text-transform: none,
+                text-decoration:none,
+                font-weight: normal,
+                letter-spacing: 0px,
+                line-height: 1.5,
+                leading: 1.5,
+            //TODO: change to direct font size option
+                font-size: 0,
+                children: (
+                        p : 0,
+                        h1:6,
+                        h2:5,
+                        h3:4,
+                        h4:3,
+                        h5:2,
+                        h6:1,
+                        i:0,
+                        a:0,
+                        strong:0,
+                        blockquote:0,
+                        '.lead':1,
+                        caption:-1
+                ),
+                scale : false,
+        ),
+
+        heading : (
+                font-family: 'Random',
+                text-transform: uppercase,
+                text-decoration:none,
+                font-weight: 400,
+                letter-spacing: 1.12px,
+                line-height: 1.5,
+                leading: 1.5,
+                font-size: 0,
+                modularscale: (
+                        base: 1em,
+                        ratio: 1.2,
+                        400px: (
+                                base:1em,
+                        ),
+                        900px: (
+                                base: .875em,
+                        ),
+                ),
+                scale : true,
+        )
+);
+html{
+    font-size: ms(0);
+   // @include doTypeset(map_get($type-style, 'base'));
+
+//@include hello();
+};
+@mixin hello() {
+
+    color:purple;
+}
+
+h1,h2,h3,h4,h5,h6{
+text-transform: uppercase;
+    font-size: 40px!important;
+  //  color: red;
+}
+nav.fusion-main-menu{
+    background: url("https://raw.github.com/Magnus-G/texture-mixin/gh-pages/textures/inverted/worn_dots.png");
+    text-transform: uppercase;
+
+}
+@mixin doTypeset($conf: (),$self:false) {
+    // Extending the default arguments with the given object
+   // $conf: extend(map_get($type-style, 'default'), $conf);
+
+    //  @include ms-respond(font-size, 0);
+ /*
+    font-size: ms(0);
+    font-family: map-get($conf, font-family);
+    text-transform: map-get($conf, text-transform);
+    text-decoration: map-get($conf, text-decoration);
+    font-weight: map-get($conf, font-weight);
+    letter-spacing: map-get($conf, letter-spacing )*$type-scale;
+ //   word-spacing: map_get($conf, word-spacing);
+ //   font-style: map_get($conf, font-style);
+ //   color: map_get($conf, color);  ///this can be used to override
+/*
+    @if map_has_key($conf,children) {
+        $children: map-get($conf, children);
+        @each $selector, $sizeval in $children {
+            #{$selector} {
+                font-size: ms($sizeval);
+                //@include ms-respond(font-size, $sizeval);
+            }
+        }
+    }*/
+}
+
 
