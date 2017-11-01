@@ -20,6 +20,11 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
+@import '../../../../node_modules/breakpoint-sass/stylesheets/breakpoint'; // or 'breakpoint-sass' when using npm
+@import '../../../../node_modules/breakpoint-slicer/stylesheets/breakpoint-slicer';
+
+///Applications/MAMP/htdocs/AVDPyromancy/wp/node_modules/breakpoint-sass/stylesheets/_breakpoint.scss
+
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------

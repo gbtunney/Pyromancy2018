@@ -995,6 +995,8 @@ if ( fusion_is_element_enabled( 'fusion_content_boxes' ) ) {
 						if ( $this->child_args['outercirclebordercolor'] && $this->child_args['outercirclebordersize'] && intval( $this->child_args['outercirclebordersize'] ) ) {
 							// If there is a thick border, kill border width and make it center aligned positioned.
 							$attr['style'] .= 'position:relative;';
+							$attr['style'] .= 'top:auto;';
+							$attr['style'] .= 'left:auto;';
 							$attr['style'] .= 'margin:0;';
 							$attr['style'] .= 'border-radius:' . $this->parent_args['icon_circle_radius'] . ';';
 						}

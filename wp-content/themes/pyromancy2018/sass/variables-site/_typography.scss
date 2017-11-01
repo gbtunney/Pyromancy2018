@@ -3,3 +3,72 @@ $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;
+
+$type-style: (
+    default : (
+        font-family: 'PostGrotesk-Book',
+        text-transform: none,
+        text-decoration:none,
+        font-weight: normal,
+        letter-spacing: 0px,
+        line-height: 1.5,
+        leading: 1.5,
+        //TODO: change to direct font size option
+        font-size: 0,
+        children: (
+            p : 0,
+            h1:6,
+            h2:5,
+        ),
+        scale : false,
+    ),
+    base : (
+        font-family: Arial,
+        text-transform: none,
+        text-decoration:none,
+        font-weight: normal,
+        letter-spacing: 0px,
+        line-height: 1.5,
+        leading: 1.5,
+        //TODO: change to direct font size option
+        font-size: 0,
+        children: (
+            p : 0,
+            h1:6,
+            h2:5,
+            h3:4,
+            h4:3,
+            h5:2,
+            h6:1,
+            i:0,
+            a:0,
+            strong:0,
+            blockquote:0,
+            '.lead':1,
+            caption:-1
+        ),
+        scale : false,
+    ),
+
+    heading : (
+        font-family: 'Random',
+        text-transform: uppercase,
+        text-decoration:none,
+        font-weight: 400,
+        letter-spacing: 1.12px,
+        line-height: 1.5,
+        leading: 1.5,
+        font-size: 0,
+        modularscale: (
+            base: 1em,
+            ratio: 1.2,
+            400px: (
+                base:1em,
+            ),
+            900px: (
+                base: .875em,
+            ),
+        ),
+        scale : true,
+    )
+)

@@ -309,7 +309,7 @@ if ( fusion_is_element_enabled( 'fusion_blog' ) ) {
 					}
 
 					// Setting up tags to be used.
-					$tag_ids = '';
+					$tag_ids = array();
 					if ( '' !== $defaults['tag_slug'] ) {
 						$tags = explode( ',' , $defaults['tag_slug'] );
 						if ( isset( $tags ) && $tags ) {

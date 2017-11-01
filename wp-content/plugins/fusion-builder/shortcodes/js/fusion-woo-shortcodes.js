@@ -13,9 +13,9 @@
 				'[product id="" sku=""]',
 				'[products ids="" skus=""]',
 				'[product_categories number=""]',
-				'[product_category category="" per_page="12" columns="4" orderby="date" order="desc"]',
-				'[recent_products per_page="12" columns="4" orderby="date" order="desc"]',
-				'[featured_products per_page="12" columns="4" orderby="date" order="desc"]',
+				'[product_category category="" limit="12" columns="4" orderby="date" order="desc"]',
+				'[recent_products limit="12" columns="4" orderby="date" order="desc"]',
+				'[featured_products limit="12" columns="4" orderby="date" order="desc"]',
 				'[shop_messages]'
 			),
 			selected = $( this ).val();
