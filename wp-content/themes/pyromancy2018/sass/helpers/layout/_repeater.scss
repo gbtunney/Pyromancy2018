@@ -1,0 +1,33 @@
+///these are layouts with the same item tiled
+
+%repeater-post-list-3x2 {
+    //wrapper for list of items that are all the same size.
+    @include make-flex-list();
+    $list-configuration: (
+            items-per-row: 3,
+            height: 240px,
+            gutter: 25px,
+    );
+    > .grid-item {
+        @include breakpoint-range(md, ">=") { //applied to range of breakpoints md and larger..
+            @include make-flex-list-item($list-configuration);
+        }
+        @include breakpoint-range(sm) { //applied to breakpoint sm
+            @include make-flex-list-item(extend($list-configuration, (items-per-row: 2)));
+        }
+        @include breakpoint-range(xs) {
+            @include make-flex-list-item(extend($list-configuration, (items-per-row: 1,)));
+        }
+    }
+}
+%repeater-post-list-1x6 {
+    @include make-flex-list((flex-wrap: wrap));
+    $list-configuration: (
+            items-per-row: 1,
+            height: auto,
+            gutter: 0px,
+    );
+    >  .grid-item{
+        @include make-flex-list-item($list-configuration);
+    }
+}

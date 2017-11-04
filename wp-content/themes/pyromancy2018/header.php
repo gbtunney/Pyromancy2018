@@ -20,7 +20,9 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+
+<body <?php body_class(); ?>
+
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'pyromancy2018' ); ?></a>
 
@@ -41,8 +43,7 @@
 			<?php
 			endif; ?>
 		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
+        <nav id="site-navigation" class="tk-mrs-eaves-roman-small-caps main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'pyromancy2018' ); ?></button>
 			<?php
 				wp_nav_menu( array(

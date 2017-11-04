@@ -1,0 +1,84 @@
+///these are (asymmetric) single row 'grid' with columns
+%layout-3-columns {
+
+    // 1:3:1 columns on large , stacks on xs
+    @include breakpoint-range(sm,">=") {
+        @include make-flex-list((flex-wrap: nowrap));
+        > .grid-item {
+            overflow: hidden;
+            $list-configuration: (
+                    items-per-row: 1 3 1,
+                    height: 280px,
+                    gutter: 45px,
+            );
+            @include make-flex-list-item($list-configuration);
+        }
+    }
+    @include breakpoint-range(xs) {
+        @include make-flex-list((flex-wrap: wrap));
+        $list-configuration: (
+                items-per-row: 1,
+                height: auto,
+                gutter: 0px,
+        );
+        >.grid-item {
+            @include make-flex-list-item($list-configuration);
+        }
+    }
+}
+
+%layout-2-columns {
+
+    // 1:2 columns  , stacks on xs
+    @include breakpoint-range(sm,">=") {
+        @include make-flex-list((flex-wrap: nowrap));
+        $list-configuration: (
+                items-per-row: 1 2,
+                height: auto,
+                gutter: 2.5em,
+        );
+        .grid-item {
+            overflow: hidden;
+            @include make-flex-list-item($list-configuration);
+        }
+    }
+    @include breakpoint-range(xs) {
+        @include make-flex-list((flex-wrap: wrap));
+        $list-configuration: (
+                items-per-row: 1,
+                height: auto,
+                gutter: 0px,
+        );
+       > .grid-item {
+            @include make-flex-list-item($list-configuration);
+        }
+    }
+}
+
+%layout-2-columns-footer {
+
+    //3 : 1  columns , stacks on xs
+    @include breakpoint-range(sm,">=") {
+        @include make-flex-list((flex-wrap: nowrap));
+        $list-configuration: (
+                items-per-row: 3 1,
+                height: auto,
+                gutter: 0px,
+        );
+        .grid-item {
+            overflow: hidden;
+            @include make-flex-list-item($list-configuration);
+        }
+    }
+    @include breakpoint-range(xs) {
+        @include make-flex-list((flex-wrap: wrap));
+        $list-configuration: (
+                items-per-row: 1,
+                height: auto,
+                gutter: 0px,
+        );
+        > .grid-item {
+            @include make-flex-list-item($list-configuration);
+        }
+    }
+}

@@ -1,0 +1,72 @@
+//this is ultra simple flexbox layout that sets a calc width with margin-right gutters.
+// Can be used for repeated items and a single row 'grid' (ratios), gutters do not repeat on outer edge
+
+@mixin make-flex-list-item($conf: (), $showGuides: true) {
+    // Extending the default arguments with the given object
+    $conf: extend((
+            items-per-row: 3,
+            height: auto,
+            gutter: 25px,
+    ), $conf);
+
+    $gutter: (map-get($conf, gutter));
+
+    //show guides =true helpful for debugging margins/padding
+    @if ( $showGuides == true ){
+        border: 2px solid random-color();
+    }
+    height: map-get($conf, height);
+    margin-right: $gutter;
+    margin-bottom: $gutter;
+
+    $items-per-row: map-get($conf, items-per-row);
+
+    @if (type-of($items-per-row) == number) {
+        //calculate width of equal sized items
+        width: calc((100% - (#{$gutter * ( $items-per-row - 1) })) / #{$items-per-row});
+        &:nth-child(#{$items-per-row}n) {
+            margin-right: 0px;
+        }
+    } @else if (type-of(map-get($conf, items-per-row)) == list) {
+
+        //total number of items
+        $number-of-items: length($items-per-row);
+
+        //count total number of units
+        $totalunits: 0;
+        @each $value in $items-per-row {
+            $totalunits: $totalunits + strip-unit($value);
+        }
+
+        @for $i from 1 through length($items-per-row) {
+            &:nth-child( #{$i}) {
+                //calculate width of unequal sized items based on ratio.
+                width: calc((100% - (#{$gutter * ( $number-of-items - 1) })) / #{$totalunits / nth($items-per-row, $i)});
+                &:nth-child(#{$number-of-items}n) {
+                    margin-right: 0px;
+                }
+            }
+        }
+    }
+}
+
+@mixin make-flex-list($conf: ()) {
+    // Extending the default arguments with the given object
+    $conf: extend((
+            width: 100%,
+            flex-direction: row,
+            flex-wrap: wrap,
+    ), $conf);
+
+    width: map-get($conf, width);
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: map-get($conf, flex-direction);
+    -ms-flex-direction: map-get($conf, flex-direction);
+    flex-direction: map-get($conf, flex-direction);
+    -webkit-flex-wrap: map-get($conf, flex-wrap);
+    -ms-flex-wrap: map-get($conf, flex-wrap);
+    flex-wrap: map-get($conf, flex-wrap);
+
+}
