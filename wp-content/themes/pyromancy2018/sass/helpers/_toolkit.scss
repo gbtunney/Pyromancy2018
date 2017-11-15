@@ -185,9 +185,9 @@ $result: map-merge(nth($map-list, $i), (nth($keys, $i): if($i == length($map-lis
 @mixin doTypeset($conf: (),$self:false) {
     // Extending the default arguments with the given object
     $conf: extend(map_get($type-style, 'default'), $conf);
-
+@debug ms(0);
   //  @include ms-respond(font-size, 0);
-font-size: ms(0);
+//font-size: ms(0);
     font-family: map-get($conf, font-family);
     text-transform: map-get($conf, text-transform);
     text-decoration: map-get($conf, text-decoration);

@@ -22,6 +22,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 @import '../../../../node_modules/breakpoint-sass/stylesheets/breakpoint'; // or 'breakpoint-sass' when using npm
 @import '../../../../node_modules/breakpoint-slicer/stylesheets/breakpoint-slicer';
+@import '../../../../node_modules/modularscale-sass/stylesheets/modularscale';
+
 
 ///Applications/MAMP/htdocs/AVDPyromancy/wp/node_modules/breakpoint-sass/stylesheets/_breakpoint.scss
 
@@ -49,11 +51,33 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
+/*--------------------------------------------------------------
+# Helpers
+--------------------------------------------------------------*/
+@import "helpers/helpers";
 
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
 @import "normalize";
+
+// Your settings for Typesettings :)
+$font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-serif: Georgia, 'Times New Roman', serif;
+$font-mono: 'Lucida Console', Monaco, monospace;
+$text-color: #ffffff;
+$base-vertical-unit: 6px;
+$base-line-multi: 4;
+$base-font-size: 16px;
+$ms-ratio: 1.414;
+$paragraph-indent: true;
+$paragraph-justify: true;
+$load-typesetted: true;
+
+// Here is the _typesettings.scss partial
+@import '../../../../node_modules/typesettings/typesettings';
+
+
 
 /*--------------------------------------------------------------
 # Typography
@@ -109,9 +133,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Media
 --------------------------------------------------------------*/
 @import "media/media";
-/*--------------------------------------------------------------
-# Helpers
---------------------------------------------------------------*/
-//@import "helpers/helpers";
+
 
 

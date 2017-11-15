@@ -1,9 +1,12 @@
 p {
 	margin-bottom: 1.5em;
+border: 1px solid red;
+	@include rhythmBorderBottom(3px, 3, $ms-down1);
+	border-color: red;
 }
 
 dfn, cite, em, i {
-	font-style: italic;
+	//font-style: italic;
 }
 
 blockquote {

@@ -69,7 +69,7 @@ body {
   font-size: 140%;
   line-height: 1.5;
   color: #444;
-  background-color: #fff; }
+  background-color: red; }
 
 img {
   max-width: 100%;
@@ -88,12 +88,12 @@ input[type="search"] {
 
 ::-moz-selection {
   background-color: #04A4CC;
-  color: #fff;
+  color: red;
   text-shadow: none; }
 
 ::selection {
   background-color: #04A4CC;
-  color: #fff;
+  color: red;
   text-shadow: none; }
 
 /**
@@ -123,7 +123,7 @@ input[type="search"] {
  * Gallery & images
  */
 .wp-caption {
-  background: #fff;
+  background: red;
   border: thin solid #F0F0F0;
   max-width: 95%;
   padding: 5px 5px;
